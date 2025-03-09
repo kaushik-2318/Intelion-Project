@@ -43,8 +43,8 @@ export default function Navbar() {
         <>
             <header className={`fixed top-0 z-50 transition-all duration-300 left-1/2 -translate-x-1/2 lg:px-14 ${isScrolled ? "backdrop-blur-md py-2 shadow-md mt-5 rounded-3xl w-[95%]" : "bg-transparent py-4 w-full"}`}>
                 <div className="mx-auto px-4 flex justify-between items-center">
-                    <Link href="/" className="flex items-center gap-2">
-                        <motion.div className="relative w-10 h-10 bg-gradient-to-br from-[#006fee] to-purple-600 rounded-lg flex items-center justify-center" whileHover={{ scale: 1.1, rotate: 180, transition: { duration: 0.3 } }} whileTap={{ scale: 0.95 }}>
+                    <Link href="/" className="flex items-center gap-2 group cursor-pointer">
+                        <motion.div className="relative w-10 h-10 bg-gradient-to-br from-[#006fee] to-purple-600 rounded-lg flex items-center justify-center group-hover:scale-110 group-hover:rotate-180 duration-500" whileTap={{ scale: 0.95 }}>
                             <span className="text-white font-bold text-xl">I</span>
                             <div className="absolute -inset-0.5 bg-gradient-to-br from-[#006fee] to-purple-600 rounded-lg blur opacity-50 -z-10"></div>
                         </motion.div>
