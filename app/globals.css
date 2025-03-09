@@ -4,3 +4,11 @@ body{
   font-family: Arial, Helvetica, sans-serif;
   color: #c9cdd2;
 }
+
+.tech-item {
+  transition: transform 0.3s ease;
+}
+
+.tech-item:hover {
+  transform: scale(1.05);
+}

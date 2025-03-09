@@ -97,13 +97,7 @@ const ParticleBackground = () => {
   }, [])
 
   return (
-    <motion.canvas
-      ref={canvasRef}
-      className="absolute top-0 left-0 w-full h-full z-0"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    />
+    <motion.canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full z-[-1] bg-[#0f1729]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}/>
   )
 }
 
