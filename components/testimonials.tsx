@@ -91,7 +91,7 @@ export default function Testimonials() {
               <motion.div key={current} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -20 }} transition={{ duration: 0.5 }} className="relative ">
                 <div className="flex flex-col md:flex-row gap-8 items-start">
                   <div className="md:w-2/3">
-                    <p className="text-xl md:text-2xl italic mb-8">
+                    <p className="text-xl md:text-2xl italic mb-8 text-justify">
                       &quot;{testimonials[current].content}&quot;
                     </p>
 
@@ -113,9 +113,8 @@ export default function Testimonials() {
                     </div>
                   </div>
 
-                  <div className="md:w-1/3 bg-transparent backdrop-blur-3xl rounded-xl p-6 border border-[#e5e5e5]/50">
+                  <div className="md:w-1/3 w-full bg-transparent backdrop-blur-3xl rounded-xl p-6 border border-[#e5e5e5]/50">
                     <h4 className="font-semibold mb-4 text-center">Success Metrics</h4>
-
                     {Object.entries(testimonials[current].stats).map(([key, value]) => (
                       <div key={key} className="mb-3">
                         <div className="flex justify-between mb-1">
