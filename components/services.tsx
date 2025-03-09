@@ -39,7 +39,7 @@ const services = [
 ]
 
 export default function Services() {
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
@@ -82,7 +82,7 @@ export default function Services() {
   return (
     <section className="py-20" id="services">
       <div className="mx-auto px-4">
-        <motion.div className="text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2}}}}>
+        <motion.div className="text-center mb-16" initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2 } } }}>
           <motion.h2 className="text-3xl md:text-4xl font-bold mb-4" variants={titleVariants}>
             Our{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#006fee] to-purple-600">Services</span>
@@ -109,7 +109,7 @@ export default function Services() {
                   <div className="flex justify-between items-center">
                     <span className="text-sm text-[#006fee] font-medium">Learn more</span>
                     <motion.div className="w-6 h-6 rounded-full bg-[#006fee]/10 flex items-center justify-center group-hover:bg-[#006fee] transition-colors duration-300" whileHover={{ x: 5 }} transition={{ type: "spring", stiffness: 400, damping: 10 }}>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"className="text-[#006fee] group-hover:text-white transition-colors duration-300">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-[#006fee] group-hover:text-white transition-colors duration-300">
                         <path d="M5 12h14"></path>
                         <path d="m12 5 7 7-7 7"></path>
                       </svg>

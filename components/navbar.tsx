@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@heroui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger, } from "@/components/ui/dropdown-menu"
 
 const navItems = [
     { name: "Home", href: "/" },
@@ -51,8 +50,6 @@ const navItems = [
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false)
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-    const [activePath, setActivePath] = useState("/")
-
 
     useEffect(() => {
         const handleScroll = () => {
@@ -61,22 +58,6 @@ export default function Navbar() {
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
-
-    const renderDropdownContent = (items: string[]) => (
-        <DropdownMenuContent className="w-72 p-2">
-            <DropdownMenuGroup>
-                {items.map((item, index) => (
-                    <DropdownMenuItem
-                        key={index}
-                        className="p-3 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800 rounded-md"
-                    >
-                        {item}
-                    </DropdownMenuItem>
-                ))}
-            </DropdownMenuGroup>
-        </DropdownMenuContent>
-    )
-    
 
     return (
         <>

@@ -33,7 +33,6 @@ const ParticleBackground = () => {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // Initialize particles
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * canvas.width,
@@ -48,14 +47,12 @@ const ParticleBackground = () => {
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
-      // Update and draw particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
 
         p.x += p.speedX
         p.y += p.speedY
 
-        // Bounce off edges
         if (p.x < 0 || p.x > canvas.width) p.speedX *= -1
         if (p.y < 0 || p.y > canvas.height) p.speedY *= -1
 
@@ -66,7 +63,6 @@ const ParticleBackground = () => {
         ctx.fill()
       }
 
-      // Draw connections
       ctx.globalAlpha = 0.1
       ctx.strokeStyle = "#4f46e5"
       ctx.lineWidth = 0.5
@@ -97,7 +93,7 @@ const ParticleBackground = () => {
   }, [])
 
   return (
-    <motion.canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full z-[-1] bg-[#0f1729]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }}/>
+    <motion.canvas ref={canvasRef} className="fixed top-0 left-0 w-full h-full z-[-1] bg-[#0f1729]" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} />
   )
 }
 

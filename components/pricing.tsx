@@ -113,7 +113,7 @@ const pricingPlans = {
 
 export default function Pricing() {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "annual">("monthly")
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
@@ -159,7 +159,7 @@ export default function Pricing() {
             <Label htmlFor="billing-toggle" className={`mr-2 ${billingCycle === "monthly" ? "text-white" : "text-white/50"}`}>
               Monthly
             </Label>
-            <Switch id="billing-toggle" checked={billingCycle === "annual"} onCheckedChange={(checked) => setBillingCycle(checked ? "annual" : "monthly")} className="data-[state=checked]:bg-[#006fee] cursor-pointer"/>
+            <Switch id="billing-toggle" checked={billingCycle === "annual"} onCheckedChange={(checked) => setBillingCycle(checked ? "annual" : "monthly")} className="data-[state=checked]:bg-[#006fee] cursor-pointer" />
             <Label htmlFor="billing-toggle" className={`ml-2 ${billingCycle === "annual" ? "text-white" : "text-white/50"}`}>
               Annual <span className="text-green-500 text-xs font-medium ml-1">Save 20%</span>
             </Label>

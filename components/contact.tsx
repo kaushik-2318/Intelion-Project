@@ -32,7 +32,7 @@ export default function Contact() {
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const [ref, inView] = useInView({
+  const [ref] = useInView({
     triggerOnce: true,
     threshold: 0.1,
   })
