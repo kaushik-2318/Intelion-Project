@@ -10,6 +10,7 @@ import Testimonials from '@/components/testimonials';
 import Pricing from '@/components/pricing';
 import Contact from '@/components/contact';
 import Footer from '@/components/footer';
+import Banner from '@/components/banner';
 
 export default function Home() {
 
@@ -27,6 +28,7 @@ export default function Home() {
       <Pricing />
       <Contact />
       <Footer />
+     <Banner/>
     </main>
   );
 }

@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { motion } from "framer-motion"
+import { motion, Variants } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Check, Sparkles } from "lucide-react"
 import { Switch } from "@/components/ui/switch"
@@ -118,7 +118,7 @@ export default function Pricing() {
     threshold: 0.1,
   })
 
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -128,13 +128,13 @@ export default function Pricing() {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
       },

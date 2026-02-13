@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, easeInOut } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Cloud, Shield, Database, Code, BarChart, Smartphone } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
@@ -60,7 +60,7 @@ export default function Services() {
       y: 0,
       opacity: 1,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 100,
         damping: 12,
       },
@@ -74,7 +74,7 @@ export default function Services() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: [0.22, 1, 0.36, 1],
+        ease: easeInOut,
       },
     },
   }

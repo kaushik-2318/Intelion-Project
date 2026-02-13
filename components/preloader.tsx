@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, AnimatePresence, cubicBezier } from "framer-motion"
 
 const Preloader = () => {
   const [loading, setLoading] = useState(true)
@@ -23,7 +23,7 @@ const Preloader = () => {
       transition: {
         delay: i * 0.1,
         duration: 0.8,
-        ease: "easeOut",
+        ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
       },
     }),
     exit: (i: number) => ({
@@ -32,7 +32,7 @@ const Preloader = () => {
       transition: {
         delay: i * 0.05,
         duration: 0.5,
-        ease: "easeInOut",
+        ease: cubicBezier(0.25, 0.46, 0.45, 0.94),
       },
     }),
   }
